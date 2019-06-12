@@ -5,7 +5,7 @@ def superpares(num):
         return True
     else:
         if((num%10)%2==0):
-            return True and superpares(num/10)
+            return True and superpares(int(num/10))
         else:
             return False
 
@@ -18,14 +18,18 @@ def MinofList(L):
 def NumberTriangular(num):
     return ((num*(num+1))/2)
 
+def CabezaCola(l):
+    return l[0],l[-1]
+
 l=[123,224,313,426,512,648]
 l2=[[1,3,5,8,48],[2,4,6,9,11],[4,5,7,10,12],[5,7,9,12,13]]
 l3=[4,1,2,3,1024]
 l4=[(1,3),(3,2),(21,6),(15,5)]
+l6=[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
 
 
 print("1.primer y ultimo elemento")
-print(list(filter(lambda x: (x==l[0] or x==l[-1]),l)))
+print(list(map(lambda x: CabezaCola(x),l6)))
 print("2.superpares")
 print(list(filter(lambda x: superpares(x)==True,l)))
 print("3.maximos de lista de listas")
